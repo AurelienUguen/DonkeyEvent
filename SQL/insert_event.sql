@@ -1,4 +1,4 @@
-INSERT INTO `show` (`name`, director, casting, year_release, summary, genre, runtime, cover, price, category)
+INSERT INTO `show` (`name`, director, casting, year_release, summary, genre, runtime, poster, price, category)
 VALUES
 ("Blade Runner", "Ridley Scott", "Harrison Ford, Sean Young, Rutger Hauer", 1982, '',"Science-fiction", "1h56","https://tinyurl.com/42d7xvbv", 8, 0),
 ("Jumanji", "Joe Johnston", "Robin Williams, Bonnie Hunt, Kirsten Dunst", 1995, '',"Fantastique", "1h44","https://moviecovers.com/DATA/zipcache/JUMANJI.jpg", 8, 0),
