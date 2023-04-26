@@ -128,3 +128,18 @@ section .linkcolor, section .linkcolor:hover  {
     text-decoration: none;
     border-radius: 2px;
 }
+
+.connexionpage {
+    height: 640px;
+}
+
+form {
+    color: white;
+    text-align: center;
+    padding: 50px 89px 50px 90px;
+    border: 1px solid #eaa732;
+}
+
+input:placeholder-shown {
+    font-style: italic;
+ }
