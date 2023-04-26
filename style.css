@@ -78,6 +78,30 @@ section h2 {
     flex-direction: column;
 }
 
+.showlogo {
+    filter: invert();
+}
+
 section .linkcolor, section .linkcolor:hover  {
     color: #ffffff;
+}
+
+/* Event CSS */
+
+.title {
+    margin-top: 150px;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.boxshow {
+    padding: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #eaa732;
+    display: flex;
+}
+
+.blocinfoshow {
+    background-color: #ff0000;
 }
