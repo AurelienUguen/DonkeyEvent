@@ -58,7 +58,7 @@ section, .homebooking {
     align-items: center;
 }
 
-section h2 {
+section .h2section {
     margin-top: 100px;
     color: #ffffff;
 }
@@ -94,14 +94,37 @@ section .linkcolor, section .linkcolor:hover  {
     color: white;
 }
 
-.boxshow {
-    padding: 50px;
+.masterbox {
+    padding: 15px;
     margin-top: 50px;
     margin-bottom: 50px;
     background-color: #eaa732;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
 }
 
-.blocinfoshow {
-    background-color: #ff0000;
+.mastertextbox {
+    display: flex;
+}
+
+.infotextbox, .linkinfobox {
+    color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+}
+
+.linkinfobox a {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    background-color: #3f0600d9;
+    margin: 10px;
+    padding: 30px 60px 30px 60px;
+    text-decoration: none;
+    border-radius: 2px;
 }

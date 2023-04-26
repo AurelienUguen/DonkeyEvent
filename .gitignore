@@ -1,0 +1,6 @@
+/.git
+.gitignore/
+README.md/
+/suivi
+.DS_Store/
+/ressources/.DS_Store

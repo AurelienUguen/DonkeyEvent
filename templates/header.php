@@ -15,7 +15,7 @@
                 <div class="nav nav-pills nav-fill">
                     <a class="nav-link link-warning" href="index.php">Accueil</a>
                     <a class="nav-link link-warning" href="cinema.php">Cinéma</a>
-                    <a class="nav-link link-warning" href="#">Spectacle</a>
+                    <a class="nav-link link-warning" href="spectacle.php">Spectacle</a>
                     <a class="nav-link link-warning" href="connexionpage.php">Se connecter</a>
                 </div>
             </div>
