@@ -20,8 +20,6 @@ require_once 'templates/header.php';
             </div>
         </div>      
     </div>
-
-
 </section>
 
 <?php
