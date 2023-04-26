@@ -3,9 +3,9 @@ VALUES
 ("Blade Runner", "Ridley Scott", "Harrison Ford, Sean Young, Rutger Hauer", 1982, '',"Science-fiction", "1h56","https://tinyurl.com/42d7xvbv", 8, 0),
 ("Jumanji", "Joe Johnston", "Robin Williams, Bonnie Hunt, Kirsten Dunst", 1995, '',"Fantastique", "1h44","https://moviecovers.com/DATA/zipcache/JUMANJI.jpg", 8, 0),
 ("Les Banshees d'Inisherin", "Martin McDonagh", "Colin Farrell, Brendan Gleeson, Kerry Condon", 2022, "Sur Inisherin, une île isolée..","Drame", "1h54","https://tinyurl.com/5n8xxuw6", 8, 0),
-("Beck en solo acoutique", "Beck", "Beck Hansen (vocal, gtr)", '', '',"Pop", '',"https://tinyurl.com/489umrcy", 15, 1),
-("Manu Chao, Sibérie m'était contéee", "Manu Chao", "Manu Chao (vocal, gtr)", '', '',"Pop-World", '',"https://tinyurl.com/yckt6553", 15, 1),
-("Asaf Avidan en acoustique", "Asaf Avidan", "Asaf avidan (vocal, gtr, piano)", '', '',"Folk-Rock", '',"https://tinyurl.com/2p85wsd2", 15, 1);
+("Beck en solo acoutique", "Beck", "Beck Hansen (vocal, gtr)", null, '',"Pop", '',"https://tinyurl.com/489umrcy", 15, 1),
+("Manu Chao, Sibérie m'était contéee", "Manu Chao", "Manu Chao (vocal, gtr)", null, '',"Pop-World", '',"https://tinyurl.com/yckt6553", 15, 1),
+("Asaf Avidan en acoustique", "Asaf Avidan", "Asaf avidan (vocal, gtr, piano)", null, '',"Folk-Rock", '',"https://tinyurl.com/2p85wsd2", 15, 1);
 
 INSERT INTO screen (show_id, `name`, `date`, showtime_1, showtime_2, showtime_3, showtime_4, capacity)
 VALUES
@@ -18,8 +18,6 @@ VALUES
 
 INSERT INTO `user` (`name`, `password`, email)
 VALUES
-("John Rambo", "1234", "la@foret.com");
-
-INSERT INTO `cart` (`screen_id`, `user_id`)
-VALUES
-(2, 1);
+("Moussa", "1234", "la@foret.com");
+("Aurélien", "1234", "la@foret.com");
+("Kuba", "1234", "la@foret.com");
