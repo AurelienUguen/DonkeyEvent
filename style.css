@@ -143,3 +143,21 @@ form {
 input:placeholder-shown {
     font-style: italic;
  }
+
+.detailbox {
+    padding: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #eaa732;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.moredetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+}
