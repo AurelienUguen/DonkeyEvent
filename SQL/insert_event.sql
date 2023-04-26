@@ -9,15 +9,15 @@ VALUES
 
 INSERT INTO screen (show_id, `name`, `date`, showtime_1, showtime_2, showtime_3, showtime_4, capacity)
 VALUES
-(1, "Salle Rouge", "2023-05-09", "10:20", "13:00", "15:30", "18:00", 200),
-(2, "Salle Bleue", "2023-05-10", "10:00", "12:30", "14:45", "17:15", 300),
-(3, "Salle Rouge", "2023-05-10", "10:00", "12:30", "14:45", "17:15", 300),
-(4, "Salle Live", "2023-05-18", "20:30", '', '', '', 450),
-(5, "Salle Live", "2023-05-22", "20:30", '', '', '', 450),
-(6, "Salle Live", "2023-05-23", "20:00", '', '', '', 450);
+(1, "Salle Rouge", "2023-05-09", "10:20", "13:00", "15:30", "18:00", 200, 0),
+(2, "Salle Bleue", "2023-05-10", "10:00", "12:30", "14:45", "17:15", 300, 0),
+(3, "Salle Rouge", "2023-05-10", "10:00", "12:30", "14:45", "17:15", 300, 0),
+(4, "Salle Live", "2023-05-18", "20:30", '', '', '', 450, 0),
+(5, "Salle Live", "2023-05-22", "20:30", '', '', '', 450, 0),
+(6, "Salle Live", "2023-05-23", "20:00", '', '', '', 450, 0);
 
 INSERT INTO `user` (`name`, `password`, email)
 VALUES
-("Moussa", "1234", "la@foret.com");
-("Aurélien", "1234", "la@foret.com");
-("Kuba", "1234", "la@foret.com");
+("Moussa", "1234", "amdin@event.com"),
+("Aurélien", "1234", "admin@event.com"),
+("Kuba", "1234", "admin@event.com");
