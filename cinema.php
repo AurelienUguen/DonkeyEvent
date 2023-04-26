@@ -15,7 +15,7 @@ require_once 'templates/header.php';
                 <p>Sur Inisherin - une île isolée au large de la côte ouest de l'Irlande - deux compères de toujours, Pádraic et Colm, se retrouvent dans une impasse lorsque Colm décide du jour au lendemain de mettre fin à leur amitié.</p>
             </div>
             <div class=" container container-fluid linkinfobox">
-                <a href="#">Voir plus</a>
+                <a href="show.php">Voir plus</a>
                 <a href="#">Réserver</a>
             </div>
         </div>      
