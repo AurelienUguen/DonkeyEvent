@@ -58,7 +58,7 @@ section, .homebooking {
     align-items: center;
 }
 
-section h2 {
+section .h2section {
     margin-top: 100px;
     color: #ffffff;
 }
@@ -78,6 +78,68 @@ section h2 {
     flex-direction: column;
 }
 
+.showlogo {
+    filter: invert();
+}
+
 section .linkcolor, section .linkcolor:hover  {
     color: #ffffff;
 }
+
+/* Event CSS */
+
+.title {
+    margin-top: 150px;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.masterbox {
+    padding: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #eaa732;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.mastertextbox {
+    display: flex;
+}
+
+.infotextbox, .linkinfobox {
+    color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+}
+
+.linkinfobox a {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    background-color: #3f0600d9;
+    margin: 10px;
+    padding: 30px 60px 30px 60px;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.connexionpage {
+    height: 640px;
+}
+
+form {
+    color: white;
+    text-align: center;
+    padding: 50px 89px 50px 90px;
+    border: 1px solid #eaa732;
+}
+
+input:placeholder-shown {
+    font-style: italic;
+ }
