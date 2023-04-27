@@ -15,8 +15,8 @@ require_once 'templates/header.php';
                 <p>GoGo Penguin est un groupe de jazz originaire de Manchester au Royaume-Uni. Il est composé du pianiste Chris Illingworth, du bassiste Nick Blacka et du batteur Jon Scott. Ils composent, partagent leurs idées et jouent avec synergie pour créer un son unique.</p>
             </div>
             <div class=" container container-fluid linkinfobox">
-                <a href="#">Voir plus</a>
-                <a href="#">Réserver</a>
+                <a href="show.php">Voir plus</a>
+                <a href="booking.php">Réserver</a>
             </div>
         </div>      
     </div>
