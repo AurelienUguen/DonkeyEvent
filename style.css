@@ -90,6 +90,12 @@ section .linkcolor, section .linkcolor:hover  {
     color: white;
 }
 
+.titlebis {
+    color: white;
+    margin: 50px 0px 50px 0px;
+
+}
+
 .masterbox {
     padding: 15px;
     margin-top: 50px;
@@ -157,3 +163,50 @@ input:placeholder-shown {
     justify-content: center;
     text-align: justify;
 }
+
+.masterboxreservation {
+    border: 1px solid #eaa732;
+    padding: 0px;
+
+}
+
+.reservation {
+    margin: 20px 20px 20px 20px;
+    padding: 15px;
+    height: 200px;
+    display: flex;
+    background-color: #eaa732;
+}
+
+.reservationtext {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reservationinfobox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.reservationinfobox a {
+    color: white;
+    background-color: #3f0600d9;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px 80px 10px 80px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.scroller {
+    width: 300px;
+    height: 680px;
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+  }
