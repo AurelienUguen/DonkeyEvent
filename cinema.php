@@ -16,7 +16,7 @@ require_once 'templates/header.php';
                         </div>
                         <div class=" container container-fluid linkinfobox">
                             <a href="show.php">Voir plus</a>
-                            <a href="#">Réserver</a>
+                            <a href="booking.php">Réserver</a>
                         </div>
                     </div>      
                 </div>
