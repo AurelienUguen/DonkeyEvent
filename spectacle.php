@@ -46,7 +46,7 @@ require_once 'templates/header.php';
                                 <p><?= $show["summary"]; ?></p>
                         </div>
                         <div class=" container container-fluid linkinfobox">
-                            <a href="#">Voir plus</a>
+                            <a href="show.php?id=<?= $show['id']; ?>">Voir plus</a>
                             <a href="#">Réserver</a>
                         </div>
                     </div>      

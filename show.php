@@ -4,10 +4,10 @@ require_once('autoload.php');
 
 if (isset($_GET)) {
 
-    $movieId = intval($_GET['id']);
+    $showId = intval($_GET['id']);
 
     $pdo = PDOInstance::getInstance();
-    $movies = DatabaseTools::selectMovie($pdo, "`show`", "seance", $movieId);
+    $movies = DatabaseTools::selectMovie($pdo, "`show`", "seance", $showId);
     //die(var_dump($movies));
 }
 
