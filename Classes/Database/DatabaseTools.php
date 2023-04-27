@@ -3,7 +3,7 @@
 class DatabaseTools
 {
 
-    public static function selectMovie($pdo, $table, $joinTable): array
+    public static function selectMovies($pdo, $table, $joinTable): array
     {
       $sql = <<<SQL
       
@@ -20,8 +20,25 @@ SQL;
       return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public static function selectMovie($pdo, $table, $joinTable, $movieId): array
+    {
+      $sql = <<<SQL
+      
+      SELECT $table.`id`, $table.`name` AS title, $table.director, $table.year_release, $table.summary, $table.genre,
+      $table.runtime, $table.poster, $table.category, $joinTable.`name` as salle, $joinTable.`date`, $joinTable.showtime_1, $joinTable.showtime_2, $joinTable.showtime_3,
+      $joinTable.showtime_4, $joinTable.capacity
+      FROM $table
+      JOIN $joinTable
+      ON $table.id = $joinTable.show_id
+      WHERE $table.`id` = $movieId
+SQL;
 
-    public static function selectShow($pdo, $table, $joinTable): array
+      $stm = $pdo->query($sql);
+      return $stm->fetch(PDO::FETCH_ASSOC);
+    }
+
+
+    public static function selectShows($pdo, $table, $joinTable): array
     {
       $sql = <<<SQL
       
@@ -37,6 +54,8 @@ SQL;
       $stm = $pdo->query($sql);
       return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
+
+
 
     public static function selectSeance($pdo, $seanceTable): array
     {

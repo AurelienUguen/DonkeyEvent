@@ -1,11 +1,11 @@
 <?php
 
 require_once('autoload.php');
-require_once 'templates/header.php';
+
 
 $pdo = PDOInstance::getInstance();
 
-$movies = DatabaseTools::selectMovie($pdo, "`show`", "seance");
+$movies = DatabaseTools::selectMovies($pdo, "`show`", "seance");
 
 // $date = new DateTimeImmutable($movies["date"]);
 // $date->format("d/m/Y");
@@ -27,6 +27,7 @@ var_dump($seances);
 var_dump($movie);
 die();
  */
+ require_once 'templates/header.php';
 ?>
 
             <section>
@@ -69,7 +70,7 @@ die();
                                 <p><?= $movie["summary"]; ?></p>
                             </div>
                             <div class=" container container-fluid linkinfobox">
-                                <a href="show.php">Voir plus</a>
+                                <a href="show.php?id=<?= $movie['id']; ?>">Voir plus</a>
                                 <a href="#">Réserver</a>
                             </div>
                         </div>      

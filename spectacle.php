@@ -4,8 +4,7 @@ require_once('autoload.php');
 
 $pdo = PDOInstance::getInstance();
 
-$table = "`show`";
-$shows = DatabaseTools::selectShow($pdo, "`show`", "seance");
+$shows = DatabaseTools::selectShows($pdo, "`show`", "seance");
 
 /* $seanceTable = "seance";
 $seances = DatabaseTools::selectSeance($pdo, $seanceTable);
