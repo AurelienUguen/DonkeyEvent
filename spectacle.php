@@ -1,5 +1,30 @@
 <?php
 
+require_once ('autoload.php');
+
+$pdo = PDOInstance::getInstance();
+
+$table = "`show`";
+$shows = DatabaseTools::selectShow($pdo, $table);
+
+$seanceTable = "seance";
+$seances = DatabaseTools::selectSeance($pdo, $seanceTable);
+
+$seanceSpec = [];
+/* 
+
+print_r($column);
+    echo "<br>";   
+ */
+foreach ($seances as $key1 => $seanceArray) {
+     foreach ($seanceArray as $key2 => $value) {
+        $seanceSpec[$key2] = $value;
+     }
+}
+
+// var_dump($seanceSpec);
+// die();
+
 require_once 'templates/header.php';
 
 ?>
@@ -20,7 +45,22 @@ require_once 'templates/header.php';
             </div>
         </div>      
     </div>
-
+    <?php foreach ($shows as $show){ ?>
+        <div class="container container-fluid masterbox">
+            <img src="<?= $show["poster"]; ?>" class="img-fluid" alt="" width="200px">
+            <div class="container container-fluid mastertextbox">
+                <div class="infotextbox">
+                    <h2><?= $show["name"]; ?></h2>
+                        <p>Concert le : <?= $seanceSpec["date"]; ?> à <?= substr($seanceSpec["showtime_1"],0,5); ?></p>
+                        <p><?= $show["summary"]; ?></p>
+                </div>
+                <div class=" container container-fluid linkinfobox">
+                    <a href="#">Voir plus</a>
+                    <a href="#">Réserver</a>
+                </div>
+            </div>      
+        </div>
+    <?php   } ?>
 
 </section>
 
