@@ -10,7 +10,7 @@ html body section {
 
 /* Header CSS */
 header nav {
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.359);
     border-bottom: 1px solid #ab7a25;
 }
 

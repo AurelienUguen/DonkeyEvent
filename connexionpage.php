@@ -9,8 +9,8 @@ require_once 'templates/header.php';
     <form method="POST">
         <!-- Username input -->
         <div class="form-outline mb-4">
-            <label class="form-label" for="username">Nom d'utilisateur :</label>
-            <input type="text" id="username" name="username" class="form-control" placeholder="Aurélien" />       
+            <label class="form-label" for="name">Nom d'utilisateur :</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Aurélien" />       
         </div>
 
         <!-- Password input -->
@@ -20,7 +20,7 @@ require_once 'templates/header.php';
         </div>
 
         <!-- Submit button -->
-        <button type="button" class="btn btn-primary btn-block btn-warning col-12 mb-4">Log in</button>
+        <input type="submit" value="Log In"class="btn btn-primary btn-block btn-warning col-12 mb-4"/>
     </form>
 </section>
 

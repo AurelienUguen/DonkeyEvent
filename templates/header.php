@@ -9,6 +9,16 @@
         <title>DonkeyEvent | Réservation en ligne</title>
     </head>
         <header>
-            <?php require_once 'menu_unauthenticated.php'?> 
+            <?php 
+
+            if(isset($_SESSION['name'])){
+                include 'menu_authenticated.php';
+            }
+            else{
+                include 'menu_unauthenticated.php';
+            }
+           
+      
+            ?> 
         </header>
     <body>

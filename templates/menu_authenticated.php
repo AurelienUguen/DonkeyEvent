@@ -7,7 +7,7 @@
                         <a class="nav-link link-warning" href="spectacle.php">Spectacle</a>
                         <a class="nav-link link-warning" href="myreservation.php">Mes réservations</a>
                         <a class="nav-link link-warning" href="#">Panier</a>
-                        <a class="nav-link link-warning" href="#">Déconnexion</a>
+                        <a class="nav-link link-warning" href="inc/disconnexionUtils.php">Déconnexion</a>
                     </div>
                 </div>
             </nav>
