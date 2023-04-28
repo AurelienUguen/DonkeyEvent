@@ -1,0 +1,132 @@
+<?php
+
+class Movie
+{
+    protected int $movieId;
+    protected string $title;
+    protected string $director;
+    protected string $casting;
+    protected string $year_release;
+    protected string $summary;
+    protected string $genre;
+    protected string $runtime;
+    protected string $poster;
+    protected string $category;
+    
+    
+    public function __construct($movieId, $title, $director, $casting, $year_release, $summary, $genre, $runtime, $poster, $category)
+    {
+        $this->movieId = $movieId;
+        $this->title = $title;
+        $this->director = $director;
+        $this->casting = $casting;
+        $this->year_release = $year_release;
+        $this->summary = $summary;
+        $this->genre = $genre;
+        $this->runtime = $runtime;
+        $this->poster = $poster;
+        $this->category = $category;
+    }
+
+    public function setMovieId($movieId): void
+    {
+        $this->movieId = $movieId;
+    }
+
+    public function getMovieId(): int
+    {
+        return $this->movieId;
+    }
+
+    public function setTitle($title): void
+    {
+        $this->title = $title;
+    }
+
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    public function setCategory($category): void
+    {
+        $this->title = $category;
+    }
+
+    public function getCategory(): string
+    {
+        return $this->category;
+    }
+    
+     public function setDirector($director): void
+    {
+        $this->title = $director;
+    }
+
+    public function getDirector(): string
+    {
+        return $this->director;
+    }
+
+     public function setCasting($casting): void
+    {
+        $this->title = $casting;
+    }
+
+    public function getCasting(): string
+    {
+        return $this->casting;
+    }
+
+     public function setYearRelease($year_release): void
+    {
+        $this->title = $year_release;
+    }
+
+    public function getYearRelease(): int
+    {
+        return $this->year_release;
+    }
+
+     public function setRuntime($runtime): void
+    {
+        $this->title = $runtime;
+    }
+
+    public function getRuntime(): string
+    {
+        return $this->runtime;
+    }
+
+     public function setGenre($genre): void
+    {
+        $this->title = $genre;
+    }
+
+    public function getGenre(): string
+    {
+        return $this->genre;
+    }
+
+     public function setSummary($summary): void
+    {
+        $this->title = $summary;
+    }
+
+    public function getSummary(): string
+    {
+        return $this->summary;
+    }
+
+     public function setPoster($poster): void
+    {
+        $this->title = $poster;
+    }
+
+    public function getPoster(): string
+    {
+        return $this->poster;
+    }
+
+}
+?>

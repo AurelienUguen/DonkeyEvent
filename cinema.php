@@ -2,10 +2,10 @@
 
 require_once('autoload.php');
 
+$movies = getItems();
 
-$pdo = PDOInstance::getInstance();
+//$movies = DatabaseTools::selectMovies($pdo, "`show`", "seance");
 
-$movies = DatabaseTools::selectMovies($pdo, "`show`", "seance");
 
 // $date = new DateTimeImmutable($movies["date"]);
 // $date->format("d/m/Y");
@@ -51,26 +51,17 @@ die();
                 <?php foreach ($movies as $movie){ ?>                   
                     <div class="container container-fluid masterbox">
                         <div class="col-md-2">
-                            <img src="<?= $movie["poster"]; ?>" class="img-fluid" alt="Affiche du film <?= $movie["title"]; ?>">
+                            <img src="<?= $movie->getPoster(); ?>" class="img-fluid" alt="Affiche du film <?= $movie->getTitle(); ?>">
                         </div>
                         <div class="container container-fluid mastertextbox">
                             <div class="infotextbox">
-                                <h2><?= $movie["title"]; ?></h2>
-                                <h5><?= $movie["year_release"]; ?> - <?= $movie["runtime"]; ?></h5>
-                                <p style="font-size: 1.1rem;">Séances : le <?php
-                                                    $date = new DateTimeImmutable($movie["date"]);
-                                                    echo $date->format("d/m/Y");
-                                                ?> à
-                                    <?= substr($movie["showtime_1"],0,5); ?> -
-                                    <?= substr($movie["showtime_2"],0,5); ?> -
-                                    <?= substr($movie["showtime_3"],0,5); ?> -
-                                    <?= substr($movie["showtime_4"],0,5); ?>
-                                </p>
-                                <p>Places restantes : <?= $movie["capacity"]; ?></p>
-                                <p><?= $movie["summary"]; ?></p>
+                                <h2><?= $movie->getTitle(); ?></h2>
+                                <h4>de <?= $movie->getDirector(); ?></h4>
+                                <h5><?= $movie->getYearRelease(); ?> - <?= $movie->getRuntime(); ?></h5>                              
+                                <p><?= $movie->getSummary(); ?></p>
                             </div>
                             <div class=" container container-fluid linkinfobox">
-                                <a href="show.php?id=<?= $movie['id']; ?>">Voir plus</a>
+                                <a href="show.php?id=<?= $movie->getMovieId(); ?>">Voir plus</a>
                                 <a href="#">Réserver</a>
                             </div>
                         </div>      
