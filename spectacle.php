@@ -19,7 +19,6 @@ foreach ($seances as $key1 => $seanceArray) {
 require_once 'templates/header.php';
 
 ?>
-
         <section>
             <h1 class="display-4 title">Quel spectacle souhaitez-vous voir ?</h1>     
             <?php foreach ($shows as $show){ ?>
@@ -39,10 +38,7 @@ require_once 'templates/header.php';
                     </div>      
                 </div>
             <?php   } ?>
-
-
         </section>
-
 <?php
 
 require_once 'templates/footer.php';
