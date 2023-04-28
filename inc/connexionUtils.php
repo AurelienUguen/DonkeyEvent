@@ -20,6 +20,7 @@ $users = $sth->fetchAll(PDO::FETCH_ASSOC);
         foreach($users as $user) {
             if($user['name'] === $_POST['name'] && $user['password'] === $_POST['password']) {
                 $loggedUser = [
+                    'id' => $user['id'],
                     'name' => $user['name']
                 ];
                 $_SESSION = $loggedUser;
