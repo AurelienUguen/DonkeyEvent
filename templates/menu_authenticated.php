@@ -8,6 +8,7 @@
                         <a class="nav-link link-warning" href="myreservation.php">Mes réservations</a>
                         <a class="nav-link link-warning" href="#">Panier</a>
                         <a class="nav-link link-warning" href="inc/disconnexionUtils.php">Déconnexion</a>
+                        <span class="text-light">Bienvenue <?= $_SESSION["name"]; ?> </span>
                     </div>
                 </div>
             </nav>

@@ -10,8 +10,12 @@ class FetchEvent
       $sql = <<<SQL
       
       SELECT `show`.`id`, `show`.`name` AS title, `show`.director, `show`.casting, `show`.year_release, `show`.summary, `show`.genre, `show`.runtime,
-      `show`.poster, `show`.price, `show`.category
-      FROM `show` WHERE `show`.category = "$where"
+      `show`.poster, `show`.price, `show`.category, seance.`id` AS seanceId, `seance`.show_id, seance.`name` AS salle, seance.`date`, `seance`.showtime_1, `seance`.showtime_2,
+      `seance`.showtime_3, `seance`.showtime_4, `seance`.capacity, `seance`.bought_ticket
+      FROM `show`
+      LEFT JOIN seance
+      ON `show`.`id` = seance.`show_id`
+      WHERE `show`.category = "$where"
 SQL;
 
       $stm = $pdo->query($sql);
@@ -25,8 +29,12 @@ SQL;
       $sql = <<<SQL
       
       SELECT `show`.`id`, `show`.`name` AS title, `show`.director, `show`.casting, `show`.year_release, `show`.summary, `show`.genre, `show`.runtime,
-      `show`.poster, `show`.price, `show`.category
-      FROM `show` WHERE `show`.id = "$showId"
+      `show`.poster, `show`.price, `show`.category, seance.`id` AS seanceId, `seance`.show_id, seance.`name` AS salle, seance.`date`, `seance`.showtime_1, `seance`.showtime_2,
+      `seance`.showtime_3, `seance`.showtime_4, `seance`.capacity, `seance`.bought_ticket
+      FROM `show`
+      LEFT JOIN seance
+      ON `show`.`id` = seance.`show_id`
+      WHERE `show`.id = "$showId"
 SQL;
 
       $stm = $pdo->query($sql);

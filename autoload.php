@@ -8,4 +8,6 @@ require_once 'Classes/Database/DatabaseTools.php';
 require_once 'Classes/Database/FetchEvent.php';
 require_once 'func/getEventsByCat.php';
 require_once 'func/getEventsById.php';
+require_once 'func/getSeanceByCat.php';
+require_once 'func/getSeanceById.php';
 
