@@ -4,29 +4,7 @@ require_once('autoload.php');
 
 $movies = getItems();
 
-//$movies = DatabaseTools::selectMovies($pdo, "`show`", "seance");
 
-
-// $date = new DateTimeImmutable($movies["date"]);
-// $date->format("d/m/Y");
-
-/* 
-$seanceTable = "seance";
-$seances = DatabaseTools::selectSeance($pdo, $seanceTable);
-$movie = [];
-foreach ($seances as $key1 => $seanceArray) {
-     foreach ($seanceArray as $key2 => $value) {
-        $movie[$key2] = $value;
-     }
-}
- */
-
-//var_dump($movies);
-/* 
-var_dump($seances);
-var_dump($movie);
-die();
- */
  require_once 'templates/header.php';
 ?>
 

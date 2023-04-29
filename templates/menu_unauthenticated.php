@@ -3,8 +3,8 @@
                     <a href="index.php"><img src="ressources/DonkeyEvent_Logo_2.png" alt="DonkeyEvent_Logo.png" width="150px"></a>
                     <div class="nav nav-pills nav-fill">
                         <a class="nav-link link-warning" href="index.php">Accueil</a>
-                        <a class="nav-link link-warning" href="cinema.php">Cinéma</a>
-                        <a class="nav-link link-warning" href="spectacle.php">Spectacle</a>
+                        <a class="nav-link link-warning" href="shows.php?cat=movie">Cinéma</a>
+                        <a class="nav-link link-warning" href="shows.php?cat=show">Spectacle</a>
                         <a class="nav-link link-warning" href="connexionpage.php">Se connecter</a>
                     </div>
                 </div>

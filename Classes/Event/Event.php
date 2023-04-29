@@ -1,26 +1,25 @@
 <?php
 
-class Movie
+class Event
 {
-    protected int $movieId;
+    protected int $eventId;
     protected string $title;
     protected string $director;
     protected string $casting;
-    protected string $year_release;
+    protected int $year_release;
     protected string $summary;
     protected string $genre;
     protected string $runtime;
     protected string $poster;
     protected string $category;
     
-    
-    public function __construct($movieId, $title, $director, $casting, $year_release, $summary, $genre, $runtime, $poster, $category)
+    public function __construct($eventId, $title, $director, $casting, $year_release, $summary, $genre, $runtime, $poster, $category)
     {
-        $this->movieId = $movieId;
+        $this->eventId = $eventId;
         $this->title = $title;
         $this->director = $director;
         $this->casting = $casting;
-        $this->year_release = $year_release;
+        $this->year_release = intval($year_release);
         $this->summary = $summary;
         $this->genre = $genre;
         $this->runtime = $runtime;
@@ -28,14 +27,14 @@ class Movie
         $this->category = $category;
     }
 
-    public function setMovieId($movieId): void
+    public function setEventId($eventId): void
     {
-        $this->movieId = $movieId;
+        $this->eventId = $eventId;
     }
 
-    public function getMovieId(): int
+    public function getEventId(): int
     {
-        return $this->movieId;
+        return $this->eventId;
     }
 
     public function setTitle($title): void
@@ -127,6 +126,5 @@ class Movie
     {
         return $this->poster;
     }
-
 }
 ?>

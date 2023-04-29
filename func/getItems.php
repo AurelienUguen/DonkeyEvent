@@ -1,22 +1,19 @@
 <?php
-require_once 'Classes/Movie/MovieInstance.php';
-require_once 'Classes/Database/FetchMovie.php';
 
-function getItems ()
+require_once 'Classes/Database/FetchEvent.php';
+
+function getItems ($where)
 {
 
 $showsArray = [];
-$showsArray[] = FetchMovie::selectMovie();
-// die(var_dump($showsArray));
+$showsArray[] = FetchEvent::selectEvent($where);
 
-foreach ($showsArray as $key1 => $row) {
-    foreach ($row as $movie) {
-      $myMovie = new Movie($movie['id'], $movie['title'], $movie['director'], $movie['casting'], $movie['year_release'], $movie['summary'], $movie['genre'], $movie['runtime'], $movie['poster'], $movie['category']);
-      // die(var_dump($myMovie));
-      $movieArray [] = $myMovie;
+foreach ($showsArray as $key => $row) {
+    foreach ($row as $event) {
+      $myEvent = new Event($event['id'], $event['title'], $event['director'], $event['casting'], $event['year_release'], $event['summary'], $event['genre'], $event['runtime'], $event['poster'], $event['category']);
+      $eventArray [] = $myEvent;
     }
   }
-
-
-return $movieArray;
+  
+  return $eventArray;
 }
