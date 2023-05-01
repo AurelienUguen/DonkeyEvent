@@ -57,7 +57,7 @@ require_once 'templates/header.php';
                     </div>
                     <div class="container container-fluid linkinfobox">
                       <a href="eventDetails.php?id=<?= $show->getEventId(); ?>">Voir plus</a>
-                      <a href="#">Réserver</a>
+                      <a href="AddToCart.php?id=<?= $show->getEventId(); ?>">Réserver</a>
                     </div>
                   </div>      
                 </div>
