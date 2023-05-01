@@ -20,7 +20,7 @@
                     </div>
 
                     <div class="bloclink">
-                        <a href="shows.php?cat=show"  class="d-flex flex-row mb-3 nav-link linkcolor">
+                        <a href="shows.php?cat=show" class="d-flex flex-row mb-3 nav-link linkcolor">
                             <img src="ressources/DonkeyEvent_Show.png" alt="SpectaclePicture" width="200px" class="p-2 showlogo">
                             <div class="textbloc">
                                 <h3 class="p-2 display-5">Des places de spectacle.</h3>
