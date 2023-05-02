@@ -10,4 +10,5 @@ require_once 'func/getEventsByCat.php';
 require_once 'func/getEventsById.php';
 require_once 'func/getSeanceByCat.php';
 require_once 'func/getSeanceById.php';
+require_once 'inc/dates.php';
 
