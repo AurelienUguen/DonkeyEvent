@@ -1,5 +1,6 @@
 <?php
 
+require_once 'Classes/Pdo/PDOInstance.php';
 
     function selectCartInfo() 
     {

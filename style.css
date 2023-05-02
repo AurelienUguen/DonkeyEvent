@@ -229,6 +229,6 @@ input:placeholder-shown {
     color: #eaa732;
   }
 
-.trash {
+.action {
     filter: invert();
 }
