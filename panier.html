@@ -11,6 +11,12 @@
     <a href="index.html" class="link">Boutique</a>
     <section>
         <table>
+            //liste des articles avec une boucle foreach
+            foreach($articles as $articles):
+            //calculer le total  prix unitaire * quantité 
+            // et aditionner chaque resultats a chaque tour de boucle 
+            total = $total + $articles['price'] * $_SESSION ['panier'][$articles['id']] ;
+            ?>
             <tr>
                 <th></th>
                 <th>Nom</th>
@@ -20,21 +26,15 @@
             </tr>
             <tr>
                 <td><img src ="jumanji.png"></td>
-                    <td>Meat</td>
-                    <td>12€</td>
-                    <td>5</td>
-                    <td><img src="trash-can-regular.svg" ></td>
+                    <td><?=$product['name']?></td>
+                    <td><?=$articles['price']?>€</td>
+                    <td><?=$_SESSION['panier'][$product['id']] //quantité?></td>
+                    <td><a href="panier.php?del=<?=$articles['id']?>"><img src="trash-can-regular.svg" ></a></td>
             </tr>
-            <tr>
-                <td><img src ="jumanji.png"></td>
-                    <td>Meat</td>
-                    <td>12€</td>
-                    <td>5</td>
-                    <td><img src="trash-can-regular.svg" ></td>
-            </tr>
-
+            <?php endforeach ;}  ?>
+           
             <tr class="total">
-            <th >total : 25 €</th>
+            <th >total : <?=$total?>€</th>
         </tr>
 
         </table>

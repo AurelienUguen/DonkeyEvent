@@ -6,7 +6,7 @@
                         <a class="nav-link link-warning" href="shows.php?cat=movie">Cinéma</a>
                         <a class="nav-link link-warning" href="shows.php?cat=show">Spectacle</a>
                         <a class="nav-link link-warning" href="myreservation.php">Mes réservations</a>
-                        <a class="nav-link link-warning" href="#">Panier</a>
+                        <a class="nav-link link-warning" href="boutique.php">Panier</a>
                         <a class="nav-link link-warning" href="inc/disconnexionUtils.php">Déconnexion</a>
                         <span class="text-light">Bienvenue <?= $_SESSION["name"]; ?> </span>
                     </div>

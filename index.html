@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANIER</title>
+    <link rel="stylesheet"href="style2.css">
+</head>
+<body>
+    <a href="panier.html"class="link">Panier <span><?php array_sum($_SESSION['panier'])?></span></a>
+    <section class="articles_list">
+        <?php
+        //inclure la page de connexion
+        include_once""
+        //afficher la liste des produits
+        $req = mysqli_query($con,"SELECT * FROM articles");
+        while($row = mysqli_fetch_assoc($req)){
+            ?>
+        
+        <form action=""class="articles">
+            <div class="image_articles">
+                <img src="jumanji.png">
+
+            </div>
+            <div class="content">
+                <h4 class="name">Jumanji</h4>
+                <h2 class="price">12€</h2>
+                <a href="#" class="id_articles">Ajouter au panier</a>
+            </div>
+        </form>
+        <form action=""class="articles">
+            <div class="image_articles">
+                <img src="banshees.png">
+
+            </div>
+            <div class="content">
+                <h4 class="name">Banshees</h4>
+                <h2 class="price">12€</h2>
+                <a href="#" class="id_articles">Ajouter au panier</a>
+            </div>
+        </form>
+        <form action=""class="articles">
+            <div class="image_articles">
+                <img src="blade.png">
+
+            </div>
+            <div class="content">
+                <h4 class="name">Blade Runner</h4>
+                <h2 class="price">12€</h2>
+                <a href="#" class="id_articles">Ajouter au panier</a>
+            </div>
+        </form>
+
+    </section>
+
+    
+</body>
+</html>

@@ -1,6 +1,11 @@
 <?php
 //inclure la page de connexion
-include_once ;
+include_once "connexion_dbb.php";
+// require_once 'templates/footer.php';
+require_once 'autoload.php';
+require_once 'templates/header.php';
+
+
 //verifier si une connexion existe
 if(!isset($_SESSION)){
     // si non demarer la session
@@ -22,8 +27,8 @@ if(!isset($_SESSION)){
 if(isset($_GET['id'])){//si un id a ete envoye alors :
     $id = $_GET ['id'];
     //verifier grace a l' id si le produit existe dans la base de donnée
-    $produit = mysqli_query($con,"SELECT* FROM articles WHERE id = $id");
-    if(empty(mysqli_fetch_assoc($produit)))
+    $PDO = PDOInstance :: get instance(); ($PDO"SELECT* FROM articles WHERE id = $id");
+    if(empty(mysqli_fetch_assoc($movie)))
     // si ce produit n'existe pas
     die("ce produit n'existe pas ");
 
