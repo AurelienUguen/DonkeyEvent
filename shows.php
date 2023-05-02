@@ -40,9 +40,12 @@ require_once 'templates/header.php';
                                       <?= substr($seances[$key]->getShowtime3(),0,5); ?> -
                                       <?= substr($seances[$key]->getShowtime4(),0,5); ?>
                         </p>
+                        <p>Prix de la place : <?= $show->getPrice(); ?> €</p>
                       <?php } elseif($show->getCategory() === "show") { ?>
                         <p>Concert le <?= $seances[$key]->getDate() ?> à :
                                       <?= substr($seances[$key]->getShowtime1(),0,5); ?>
+                        </p>
+                        <p>Prix de la place : <?= $show->getPrice(); ?> €</p>
                       <?php } ?>
                       <p>Places restantes : <?= $seances[$key]->GetCapacity(); ?></p>
                       <p><?= $show->getSummary(); ?></p>
