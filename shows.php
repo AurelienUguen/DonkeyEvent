@@ -15,6 +15,7 @@ if($_GET['cat'] === 'movie') {
     $shows = getEventsByCat($where);
     $seances = getSeanceByCat($where);
 }
+$date = new Date();
 
 require_once 'templates/header.php';
 ?>
@@ -35,7 +36,7 @@ require_once 'templates/header.php';
                       <?php if($show->getCategory() === "movie") { ?>
                         <h5><?= $show->getYearRelease(); ?> - <?= $show->getRuntime(); ?></h5>
                           <label for="orderDate">Jour de la séance : </label>
-                            <input type="date" name="orderDate" min="<?= $today; ?>" max="<?=$lastDay; ?>" value="<?= $today ?>">&nbsp;&nbsp;
+                            <input type="date" name="orderDate" min="<?= $date->getToday(); ?>" max="<?= $date->getLastWednesday(); ?>" value="<?= $date->getToday(); ?>">&nbsp;&nbsp;
                             <label for="showtime">Horaire : </label>
                               <select name="showtime" id="">
                                   <option value="<?php echo getSeanceById($show->getEventId())->getShowtime1(); ?>"><?php echo getSeanceById($show->getEventId())->getShowtime1(); ?></option>
