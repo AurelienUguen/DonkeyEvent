@@ -10,8 +10,7 @@ class Date
     {
         $this->dateToday = new \DateTimeImmutable("now", new \DateTimeZone('Europe/Paris'));
         $this->today = date_format($this->dateToday, "Y-m-d");
-        $this->dateToCheck = date('D', strtotime($this->today));
-        
+        $this->dateToCheck = date('D', strtotime($this->today));       
     }
 
     public function getLastWednesday()
@@ -55,7 +54,5 @@ class Date
     public function getToday()
     {
         return $this->today;
-    }
- 
-    
+    }    
 }
