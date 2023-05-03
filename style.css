@@ -120,6 +120,20 @@ section .linkcolor, section .linkcolor:hover  {
     text-align: justify;
 }
 
+.infotextbox input,
+.infotextbox select {
+    width: 125px;
+    background-color: #581e07;
+    color: #fff;
+    padding: 3px;
+    border: none;
+}
+.infotextbox input,
+.infotextbox select,
+.infotextbox select option {
+    text-align: center;
+}
+
 .linkinfobox a {
     color: white;
     text-align: center;

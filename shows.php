@@ -33,16 +33,17 @@ require_once 'templates/header.php';
                       <h2><?= $show->getTitle(); ?></h2>
                       <h4>de <?= $show->getDirector(); ?></h4>
                       <?php if($show->getCategory() === "movie") { ?>
-                        <label for="orderDate">Jour de la séance : </label>
-                          <input type="date" name="orderDate" min="<?= $today; ?>" max="<?=$lastDay; ?>" value="<?= $today ?>">&nbsp;&nbsp;
-                          <label for="showtime">Horaire : </label>
-                            <select name="showtime" id="">
-                                <option value="<?php echo getSeanceById($show->getEventId())->getShowtime1(); ?>"><?php echo getSeanceById($show->getEventId())->getShowtime1(); ?></option>
-                                <option value="<?php echo getSeanceById($show->getEventId())->getShowtime2(); ?>"><?php echo getSeanceById($show->getEventId())->getShowtime2(); ?></option>
-                                <option value="<?php echo getSeanceById($show->getEventId())->getShowtime3(); ?>"><?php echo getSeanceById($show->getEventId())->getShowtime3(); ?></option>
-                                <option value="<?php echo getSeanceById($show->getEventId())->getShowtime4(); ?>"><?php echo getSeanceById($show->getEventId())->getShowtime4(); ?></option>
-                            </select>
-                          <!-- <input type="submit" name="orderBtn" value="Commander"> -->
+                        <h5><?= $show->getYearRelease(); ?> - <?= $show->getRuntime(); ?></h5>
+                          <label for="orderDate">Jour de la séance : </label>
+                            <input type="date" name="orderDate" min="<?= $today; ?>" max="<?=$lastDay; ?>" value="<?= $today ?>">&nbsp;&nbsp;
+                            <label for="showtime">Horaire : </label>
+                              <select name="showtime" id="">
+                                  <option value="<?php echo getSeanceById($show->getEventId())->getShowtime1(); ?>"><?php echo getSeanceById($show->getEventId())->getShowtime1(); ?></option>
+                                  <option value="<?php echo getSeanceById($show->getEventId())->getShowtime2(); ?>"><?php echo getSeanceById($show->getEventId())->getShowtime2(); ?></option>
+                                  <option value="<?php echo getSeanceById($show->getEventId())->getShowtime3(); ?>"><?php echo getSeanceById($show->getEventId())->getShowtime3(); ?></option>
+                                  <option value="<?php echo getSeanceById($show->getEventId())->getShowtime4(); ?>"><?php echo getSeanceById($show->getEventId())->getShowtime4(); ?></option>
+                              </select>
+                            <!-- <input type="submit" name="orderBtn" value="Commander"> -->
                         <p>Prix de la place : <?= $show->getPrice(); ?> €</p>
                       <?php } elseif($show->getCategory() === "show") { ?>
                         <p>Concert le <?= $seances[$key]->getDate() ?> à :
