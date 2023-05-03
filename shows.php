@@ -1,6 +1,6 @@
 <?php
 
-require_once 'autoload.php';
+require_once 'templates/header.php';
 
 if($_GET['cat'] === 'movie') {
 
@@ -17,7 +17,7 @@ if($_GET['cat'] === 'movie') {
 }
 $date = new Date();
 
-require_once 'templates/header.php';
+
 ?>
         <section>
           <?php if($where === "movie") { ?>
@@ -57,7 +57,7 @@ require_once 'templates/header.php';
                     </div>
                     <div class="container container-fluid linkinfobox">
                       <a href="eventDetails.php?id=<?= $show->getEventId(); ?>">Voir plus</a>
-                      <a href="#">Réserver</a>
+                      <a href="AddToCart.php?id=<?= $show->getEventId(); ?>">Réserver</a>
                     </div>
                   </div>      
                 </div>

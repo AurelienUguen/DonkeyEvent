@@ -224,3 +224,11 @@ input:placeholder-shown {
     scrollbar-color: rebeccapurple green;
     scrollbar-width: thin;
   }
+
+  th {
+    color: #eaa732;
+  }
+
+.action {
+    filter: invert();
+}
