@@ -5,6 +5,7 @@ session_start();
 require_once 'Classes/Pdo/PDOInstance.php';
 require_once 'Classes/Database/DatabaseTools.php';
 require_once 'Classes/Database/SelectCartInfo.php';
+require_once 'Classes/Database/UpdateCartQuantity.php';
 require_once 'Classes/Database/FetchEvent.php';
 require_once 'Classes/Date/Date.php';
 require_once 'func/getEventsByCat.php';

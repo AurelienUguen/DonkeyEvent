@@ -5,7 +5,7 @@ require_once 'autoload.php';
 $pdo = PDOInstance::getInstance();
 
 $select =<<<SQL
-            SELECT c.id as id FROM cart c
+            SELECT c.* FROM cart c
 SQL;
 
 $sth = $pdo->prepare($select);
@@ -21,8 +21,6 @@ SQL;
 
 $delsth = $pdo->prepare($sql);
 $delsth->execute();
-
-
 
 header('location: cart.php');
 

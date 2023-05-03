@@ -2,29 +2,12 @@
 
 require_once 'templates/header.php';
 
-$userId = $_SESSION['id'];
-$pdo = PDOInstance::getInstance();
-
 if($_POST) {
-
-    foreach($_POST['quantity'] as $id => $quantity) {
-
-        if ($quantity > 0) {
-            $updateQuery = <<<SQL
-            UPDATE cart
-            SET quantity = $quantity
-            WHERE id = $id
-SQL;
-        $update = $pdo->prepare($updateQuery);
-        $update->execute();
-        }       
-    } 
+    UpdateCartQuantity::updateQuantity();
 }
-
 
 $cartInfo = [];
 $cartInfo = SelectCartInfo::selectCartInfo();
-
 
 ?>
 
@@ -67,7 +50,14 @@ $cartInfo = SelectCartInfo::selectCartInfo();
                                 echo "0";
                                 }
                             ?> €</th>
-                        <td><input type="submit" value="Actualiser" class="btn btn-primary"></td>
+                        <td>
+                            <input type="submit" value="Actualiser" class="btn btn-lg btn-primary">
+                            <?php if(!empty($info) && $info['quantity'] > 0) { ?>
+                                <a href="myreservation.php?id=<?php if($info['quantity'] >= 1) { echo $info['user_id']; } ?>" class="btn btn-lg btn-primary">Valider</a> "
+                            <?php } else { ?> 
+                                <input type="submit" value="Valider" class="btn btn-lg btn-primary" disabled>
+                            <?php } ?>
+                        </td>
                     </tr>
                 </tbody>
             </table>
