@@ -1,6 +1,6 @@
 <?php
 
-require_once 'autoload.php';
+require_once('templates/header.php');
 
 if (isset($_GET)) {
 
@@ -11,7 +11,6 @@ if (isset($_GET)) {
     // die(var_dump($show));
 }
 
-require_once('templates/header.php');
 
 ?>
           <section>

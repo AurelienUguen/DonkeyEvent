@@ -1,6 +1,6 @@
 <?php
 
-require_once 'autoload.php';
+require_once 'templates/header.php';
 
 if($_GET['cat'] === 'movie') {
 
@@ -17,7 +17,7 @@ if($_GET['cat'] === 'movie') {
 }
 $date = new Date();
 
-require_once 'templates/header.php';
+
 ?>
         <section>
           <?php if($where === "movie") { ?>

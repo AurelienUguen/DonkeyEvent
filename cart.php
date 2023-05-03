@@ -1,6 +1,5 @@
 <?php
 
-require_once 'autoload.php';
 require_once 'templates/header.php';
 
 $userId = $_SESSION['id'];
@@ -8,7 +7,6 @@ $pdo = PDOInstance::getInstance();
 
 if($_POST) {
 
-    $totalPrice = calculateTotal();
     foreach($_POST['quantity'] as $id => $quantity) {
 
         if ($quantity > 0) {
@@ -23,51 +21,10 @@ SQL;
     } 
 }
 
-$sql =<<<SQL
-SELECT c.id, c.quantity as quantity, c.show_id, u.name as username, s.name as event, s.category as category, s.price as price, s.poster as poster, s2.capacity as capacity
-        FROM cart c
-        INNER JOIN user u ON u.id = c.user_id
-        INNER JOIN seance s2 ON s2.id = c.seance_id
-        INNER JOIN `show` s ON s.id = c.show_id
-        WHERE (u.id = $userId)
-SQL;
 
-$sth = $pdo->prepare($sql);
-$sth->execute();
-$cartInfo = $sth->fetchAll(PDO::FETCH_ASSOC);
+$cartInfo = [];
+$cartInfo = SelectCartInfo::selectCartInfo();
 
-function calculateTotal() {
-
-    $pdo = PDOInstance::getInstance();
-    
-    $multiplyPrice = [];
-    $total = 0;
-    
-    foreach($_POST['quantity'] as $id => $quantity) {
-        if ($quantity > 0) {
-            $query = <<<SQL
-            SELECT * FROM `cart` WHERE id = $id
-SQL;
-
-            $cart = $pdo->prepare($query);
-            $cart->execute();
-            $allCartInfo = $cart->fetch(PDO::FETCH_ASSOC);
-
-            $query = "SELECT * FROM `show` WHERE id = " . $allCartInfo["show_id"];
-
-            $info = $pdo->prepare($query);
-            $info->execute();
-            $priceInfo = $info->fetch(PDO::FETCH_ASSOC);
-
-            $priceByEvent = $priceInfo['price'];
-
-            $price = intval($priceByEvent) * intval($quantity);
-            $total += $price;
-            array_push($multiplyPrice, $price);
-        }
-    }
-    $_SESSION['total'] = $total;
-}
 
 ?>
 
@@ -103,7 +60,13 @@ SQL;
                         <td></td>
                         <td></td>
                         <td></td>
-                        <th class="text-light align-middle">Total : <?php if(!empty($_POST)) { echo $_SESSION['total']; } else { echo "0"; } ?> €</th>
+                        <th class="text-light align-middle">Total :
+                            <?php if($_POST) {
+                                calculateTotal();
+                                } else {
+                                echo "0";
+                                }
+                            ?> €</th>
                         <td><input type="submit" value="Actualiser" class="btn btn-primary"></td>
                     </tr>
                 </tbody>
