@@ -18,8 +18,8 @@ var_dump($event);
 var_dump($seance);
 
 $sql =<<<SQL
-        INSERT INTO cart (user_id, show_id, seance_id)
-        VALUES ($userId, $show_id, $seance_id)
+        INSERT INTO cart (user_id, show_id, seance_id, quantity)
+        VALUES ($userId, $show_id, $seance_id, 1)
 SQL;
 
 $sth = $pdo->prepare($sql);
