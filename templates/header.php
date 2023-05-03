@@ -17,8 +17,7 @@
             else{
                 include 'menu_unauthenticated.php';
             }
-           
-      
+            
             ?> 
         </header>
     <body>

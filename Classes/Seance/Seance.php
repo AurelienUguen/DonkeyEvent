@@ -2,16 +2,16 @@
 
 class Seance
 {
-    private int $seanceId;
-    private int $showId;
-    private $salle;    
-    private string $date;    
-    private $showtime_1;    
-    private $showtime_2;    
-    private $showtime_3;    
-    private $showtime_4;    
-    private int $capacity;    
-    private int $bought_ticket;
+    protected int $seanceId;
+    protected int $showId;
+    protected $salle;    
+    protected string $date;    
+    protected $showtime_1;    
+    protected $showtime_2;    
+    protected $showtime_3;    
+    protected $showtime_4;    
+    protected int $capacity;    
+    protected int $bought_ticket;
 
     public function __construct($seanceId, $showId, $salle, $date, $showtime_1, $showtime_2, $showtime_3, $showtime_4, $capacity, $bought_ticket)
     {
