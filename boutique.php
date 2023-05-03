@@ -33,7 +33,7 @@ $movies = DatabaseTools::selectMovie($pdo, "`show`", "seance");
             </div>
             <div class="content">
                 <h4 class="name"><?=$movie['name']?></h4>
-                <h2 class="price"><?=$show['price']?>€</h2>
+                <h2 class="price"><?=$movie["price"]?>€</h2>
                 <a href="ajouter_panier.php?id=<?=$movie['id']?>" class="id_articles">Ajouter au panier</a>
             </div>
         </form>

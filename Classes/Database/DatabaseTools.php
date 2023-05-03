@@ -5,11 +5,12 @@ class DatabaseTools
 
     public static function selectMovie($pdo, $table, $joinTable): array
     {
+      $pdo = PDOinstance::getintance();
       $sql = <<<SQL
       
       SELECT $table.`id`, $table.`name` AS title, $table.director, $table.year_release, $table.summary,
       $table.runtime, $table.poster, $table.category, $joinTable.`name` as salle, $joinTable.`date`, $joinTable.showtime_1, $joinTable.showtime_2, $joinTable.showtime_3,
-      $joinTable.showtime_4, $joinTable.capacity
+      $joinTable.showtime_4, $joinTable.capacity ,$table.price as price  
       FROM $table
       JOIN $joinTable
       ON $table.id = $joinTable.show_id
