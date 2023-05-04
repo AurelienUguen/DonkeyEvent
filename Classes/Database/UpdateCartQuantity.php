@@ -22,7 +22,7 @@ SQL;
             }       
         } 
     }
-
+/* 
     public static function updateLeftCapacityByShow(int $showId)
     {
         $pdo = PDOInstance::getInstance();
@@ -64,14 +64,15 @@ SQL;
 SQL;
         $stm = $pdo->query($sql);
         $qty = $stm->fetchAll(PDO::FETCH_ASSOC);
-        die(var_dump($qty));
-/*         $capacity = 
+        // die(var_dump($qty));
+        $capacity = 
         $leftCapacity = $capacity - $qty[0]['quantity'];
 
         $sql =<<<SQL
                 UPDATE cart SET left_capacity = '$leftCapacity'
 SQL;
         $update = $pdo->prepare($sql);
-        $update->execute(); */
+        $update->execute();
     }
+ */
 }

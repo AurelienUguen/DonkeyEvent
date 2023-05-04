@@ -59,7 +59,9 @@ $date = new Date();
                     <div class="container container-fluid linkinfobox">
                       <a href="eventDetails.php?id=<?= $show->getEventId(); ?>">Voir plus</a>
                       <a href="AddToCart.php?id=<?= $show->getEventId(); ?>">Réserver</a>
+                      <?php if ($where === "movie") { ?>
                       <input type="submit" value="Réserver">
+                      <?php } ?>
                     </div> 
                     </form>
                   </div>      
