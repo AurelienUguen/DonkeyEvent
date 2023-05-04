@@ -3,24 +3,22 @@
 //inclure la page de connexion
 
 include_once "connexion_dbb.php";
-// require_once 'templates/footer.php';
-require_once 'autoload.php';
+
+
 require_once 'templates/header.php';
+require_once 'autoload.php';
 
 $pdo = PDOInstance::getInstance();
 
 $movies = DatabaseTools::selectMovie($pdo, "`show`", "seance");
+ 
 
 ?>
 
-    <a href="panier.html"class="link">Panier <span><8></span></a>
+    <a href="panier.php "class="link">Panier <span><?= array_sum($_SESSION['panier'])?></span></a>
     <section class="articles_list">
         <?php
-        //inclure la page de connexion
-        
-       
-       
-        //afficher la liste des produits
+       //afficher la liste des produits dans le panier
         
  ?>
            <?php foreach ($movies as $movie){ ?>  
@@ -32,7 +30,7 @@ $movies = DatabaseTools::selectMovie($pdo, "`show`", "seance");
 
             </div>
             <div class="content">
-                <h4 class="name"><?=$movie['name']?></h4>
+                <h4 class="name"><?=$movie['title']?></h4>
                 <h2 class="price"><?=$movie["price"]?>€</h2>
                 <a href="ajouter_panier.php?id=<?=$movie['id']?>" class="id_articles">Ajouter au panier</a>
             </div>

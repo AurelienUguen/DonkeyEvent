@@ -11,9 +11,10 @@ class Event
     protected string $genre;
     protected string $runtime;
     protected string $poster;
+    protected float $price;
     protected string $category;
     
-    public function __construct($eventId, $title, $director, $casting, $year_release, $summary, $genre, $runtime, $poster, $category)
+    public function __construct($eventId, $title, $director, $casting, $year_release, $summary, $genre, $runtime, $poster, $price, $category)
     {
         $this->eventId = $eventId;
         $this->title = $title;
@@ -24,6 +25,7 @@ class Event
         $this->genre = $genre;
         $this->runtime = $runtime;
         $this->poster = $poster;
+        $this->price = $price;
         $this->category = $category;
     }
 
@@ -125,6 +127,11 @@ class Event
     public function getPoster(): string
     {
         return $this->poster;
+    }
+
+    public function getPrice(): float
+    {
+        return $this->price;
     }
 }
 ?>

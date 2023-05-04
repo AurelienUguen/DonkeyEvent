@@ -5,7 +5,7 @@ class DatabaseTools
 
     public static function selectMovie($pdo, $table, $joinTable): array
     {
-      $pdo = PDOinstance::getintance();
+     
       $sql = <<<SQL
       
       SELECT $table.`id`, $table.`name` AS title, $table.director, $table.year_release, $table.summary,

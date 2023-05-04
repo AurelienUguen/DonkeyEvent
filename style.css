@@ -138,7 +138,7 @@ section .linkcolor, section .linkcolor:hover  {
 form {
     color: white;
     text-align: center;
-    padding: 50px 89px 50px 90px;
+    /* padding: 50px 89px 50px 90px; */
     border: 1px solid #eaa732;
 }
 
@@ -210,3 +210,4 @@ input:placeholder-shown {
     scrollbar-color: rebeccapurple green;
     scrollbar-width: thin;
   }
+ 

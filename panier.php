@@ -1,8 +1,19 @@
 <?php
-session_star();
-include_once('autoload.php');
+// session_start();
+// include_once "connection_dbb.php";
+require_once 'Classes/Database/FetchEvent.php';
+require_once 'Classes/Event/Event.php';
+require_once 'autoload.php';
+
+if(isset($_GET['del'])){
+    $id_del = $_GET['del'];
+    // supression
+    unset($_SESSION['panier'][$id_del]);
+}
+
+
 ?>
-!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,10 +23,10 @@ include_once('autoload.php');
     <link rel="stylesheet"href="style2.css">
 </head>
 <body class="panier">
-    <a href="index.html" class="link">Boutique</a>
+    <a href="boutique.php" class="link">Boutique</a>
     <section>
         <table>
-            <tr>
+            <tr> 
                 <th></th>
                 <th>Nom</th> 
                 <th>Prix</th>
@@ -23,33 +34,45 @@ include_once('autoload.php');
                 <th>Action</th>
             </tr>
             <?php 
+           
             // liste des produits
             // recuperer les cles du tableau session
-            $id =array_keys($_SESSION['panier']);
+            $ids =array_keys($_SESSION['panier']);
+            
             //s'il n'il a aucune clé dans le tableau
             if (empty($ids)){
                 echo"Votre panier est vide";
             }else {
                 // si oui
-                $articles = mysqli_query($connectionpage,"SELECT*FROM articles WHERE is int(".implode(',',$ids).")");
+                foreach ($ids as $key=>$id) {
+                    $articles[] = getEventsById($id);
+                }
+           }
+        //    var_dump($articles);
+        //    die();
+
             
                   //liste des articles avec une boucle foreach
-                  foreach($articles as $articles):
+                  $total = 0;
+              foreach ( $articles as $key=>$article ) {
+                // die(var_dump($article));
                     //calculer le total  prix unitaire * quantité 
                     // et aditionner chaque resultats a chaque tour de boucle 
-                    total = $total + $articles['price'] * $_SESSION ['panier'][$articles['id']] ;
-            ?>
+                    $total = $total + ($article->getPrice() * $_SESSION ['panier'][$article->getEventId()]);
+                    // $total));
+                    ?> 
             <tr>
-                <td><img src = "<?=$articles['img']?>"></td>
-                    <td><?=$articles['name']?></td>
-                    <td><?=$articles['price']?>€</td>
-                    <td><?=$_SESSION['panier'][$articles['id']] //quantité?></td>
-                    <td><a href="panier.php?del=<?=$articles['id']?>"><img src="trash-can-regular.svg" ></a></td>
+                <td><img src="<?php echo $article->getPoster();?>"></td>
+                    <td><?=$article->getTitle();?></td>
+                    <td><?=$article->getPrice();?>€</td>
+                    <td><?=($_SESSION['panier'][$article->getEventId()]) ;//quantité?></td>
+                    <td><a href="panier.php?del=<?=$article->getEventId();?>"><img src="trash-can-regular.svg" ></a></td>
             </tr>
-            <?php endforeach ;}  ?>
+            
+            <?php } ?>
            
             <tr class="total">
-            <th >total : <?=$total?>€</th>
+            <th >total : <?=$total;?>€</th>
         </tr>
 
         </table>

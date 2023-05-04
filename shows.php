@@ -7,7 +7,7 @@ if($_GET['cat'] === 'movie') {
   $where = $_GET['cat'];
   $shows = getEventsByCat($where);
   $seances = getSeanceByCat($where);
-  // die(var_dump($shows));
+  die(var_dump($shows));
 
 } elseif ($_GET['cat'] === 'show') {
 

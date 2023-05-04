@@ -105,6 +105,8 @@ span{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    padding: 10px;
+    margin-top: 20px;
 
 }
 .panier img {
@@ -142,7 +144,7 @@ tr {
 .total th {
     border :0;
     float:left;
-    font-size: 500;
+    font-size: 15;
     color:#37a6FF
     padding:10px;
 }

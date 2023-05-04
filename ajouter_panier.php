@@ -1,46 +1,49 @@
+
 <?php
-//inclure la page de connexion
+// inclure la page de connexion
 include_once "connexion_dbb.php";
 // require_once 'templates/footer.php';
 require_once 'autoload.php';
 require_once 'templates/header.php';
 
-
-//verifier si une connexion existe
-if(!isset($_SESSION)){
-    // si non demarer la session
+// vérifier si une session existe
+if (!isset($_SESSION)) {
+    // si non, démarrer la session
     session_start();
-    }
-    //creer la session
-    if(!isset($_SESSION)){
-        //si non demarer la session
-        session_start();
-    }
-    //creer la session
-    if(!isset($_SESSION['panier'])){
-        //s'il n'exiiste pas de session on creer une
-        $_SESSION['panier']=array();
-    }
+}
 
+// créer la session si elle n'existe pas
+if (!isset($_SESSION['panier'])) {
+    $_SESSION['panier'] = array();
+}
 
-// recuperation de l'id dans le lien
-if(isset($_GET['id'])){//si un id a ete envoye alors :
-    $id = $_GET ['id'];
-    //verifier grace a l' id si le produit existe dans la base de donnée
-    $PDO = PDOInstance :: get instance(); ($PDO"SELECT* FROM articles WHERE id = $id");
-    if(empty(mysqli_fetch_assoc($movie)))
-    // si ce produit n'existe pas
-    die("ce produit n'existe pas ");
+// récupération de l'id dans le lien
+if (isset($_GET['id'])) {
+    // si un id a été envoyé
+    $id = intval($_GET['id']);
+    echo $id ;
+    // vérifier grâce à l'id si le produit existe dans la base de données
+    // $result = mysqli_query($connection, "SELECT * FROM show WHERE id = $id");
+    $result = getEventsById($id);
+//     if (!$result || mysqli_num_rows($result) == 0) {
+//         // si le produit n'existe pas
+//         die("Ce produit n'existe pas.");
+//     }
+// }
+}
+// ajouter le produit dans le panier (le tableau)
+if (isset($_SESSION['panier'][$id])) {
+    // si le produit est déjà dans le panier
+    $_SESSION['panier'][$id]++;
+} else {
+    // si non, on ajoute le produit
+    $_SESSION['panier'][$id] = 1;
+    // echo "Le produit a bien été ajouté au panier !";
+    // afficher l'association associée au panier
+    // var_dump($_SESSION['panier']);
+    //redirection vers la page boutique.php
 
 }
-//ajouter le produit dans le panier ( le tableau )
+header("Location:boutique.php");
 
-if (isset($_SESSION['panier'][$id])) {//si le produuit est deja dans le panier
-    $_SESSION['panier'][$id]++;//represente la quantité
-}else {
-    //si non on ajoute le produit
-    $_SESSION['panier'][$id]=1;
-    echo"le produit a bien ete mis dans le panier !"
-    //afficher le associé au panier
-    var_dump($_SESSION['panier']); 
-}
+?>
