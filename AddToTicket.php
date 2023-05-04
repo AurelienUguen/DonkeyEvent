@@ -21,10 +21,10 @@ require_once 'autoload.php';
        
             $sql = "
                 INSERT INTO ticket 
-                (user_id, user_name, show_name, category_name, price, nb_places, seance_id)
-                VALUES (" . $info['user_id'] . ", '" . $info['username'] . "','"
+                (user_id, user_name, show_name, category_name, price, nb_places, seance_id, show_id)
+                VALUES (" . $info['user_id'] . ", '" . $info[`username`] . "','"
                     . $info['event'] . "','" . $info['category'] . "'," . $info['price'] . "," . $info['quantity'] . ","
-                    . $info['seance_id'] . ")";
+                    . $info['seance_id'] . "," . $info['show_id'] . ")";
 
             $sth = $pdo->prepare($sql);
             $sth->execute();
