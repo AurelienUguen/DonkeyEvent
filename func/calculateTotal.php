@@ -32,6 +32,7 @@ SQL;
     }
     $_SESSION['total'] = $total;
     echo $_SESSION['total'];
+    
 }
 
 ?>

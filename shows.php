@@ -7,7 +7,6 @@ if($_GET['cat'] === 'movie') {
   $where = $_GET['cat'];
   $shows = getEventsByCat($where);
   $seances = getSeanceByCat($where);
-  // die(var_dump($shows));
 
 } elseif ($_GET['cat'] === 'show') {
 
@@ -15,9 +14,8 @@ if($_GET['cat'] === 'movie') {
     $shows = getEventsByCat($where);
     $seances = getSeanceByCat($where);
 }
+
 $date = new Date();
-
-
 ?>
         <section>
           <?php if($where === "movie") { ?>
@@ -29,6 +27,7 @@ $date = new Date();
                   <div class="col-md-2">
                     <img src="<?= $show->getPoster(); ?>" class="img-fluid" alt="Affiche du film <?= $show->getTitle(); ?>">
                   </div>
+                  <form action="AddToCart.php?id=<?= $show->getEventId(); ?>" method="post">
                   <div class="container container-fluid mastertextbox">
                     <div class="infotextbox">
                       <h2><?= $show->getTitle(); ?></h2>
@@ -44,7 +43,6 @@ $date = new Date();
                                   <option value="<?php echo getSeanceById($show->getEventId())->getShowtime3(); ?>"><?php echo getSeanceById($show->getEventId())->getShowtime3(); ?></option>
                                   <option value="<?php echo getSeanceById($show->getEventId())->getShowtime4(); ?>"><?php echo getSeanceById($show->getEventId())->getShowtime4(); ?></option>
                               </select>
-                            <!-- <input type="submit" name="orderBtn" value="Commander"> -->
                         <p>Prix de la place : <?= $show->getPrice(); ?> €</p>
                       <?php } elseif($show->getCategory() === "show") { ?>
                         <p>Concert le <?= $seances[$key]->getDate() ?> à :
@@ -58,7 +56,11 @@ $date = new Date();
                     <div class="container container-fluid linkinfobox">
                       <a href="eventDetails.php?id=<?= $show->getEventId(); ?>">Voir plus</a>
                       <a href="AddToCart.php?id=<?= $show->getEventId(); ?>">Réserver</a>
-                    </div>
+                      <?php if ($where === "movie") { ?>
+                      <input type="submit" value="Réserver">
+                      <?php } ?>
+                    </div> 
+                    </form>
                   </div>      
                 </div>
               <?php   } ?>

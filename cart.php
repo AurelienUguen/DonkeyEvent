@@ -19,6 +19,7 @@ $cartInfo = SelectCartInfo::selectCartInfo();
                     <tr>
                         <th scope="col"></th>
                         <th scope="col">Evènement</th>
+                        <th scope="col">Séance</th>
                         <th scope="col">Quantité</th>
                         <th scope="col">Prix</th>
                         <th scope="col">Catégorie</th>
@@ -31,6 +32,7 @@ $cartInfo = SelectCartInfo::selectCartInfo();
                     <tr>
                         <td class="align-middle"><img src="<?php echo $info['poster']; ?>" alt="Affiche du film <?php echo $info['event']?>" width="100px"></td>
                         <td class="text-light align-middle"><?php echo $info['event']; ?></td>
+                        <td class="text-light align-middle"><?php echo $info['showtime']; ?></td>
                         <td class="text-light align-middle">
                             <input type="number" name="quantity[<?php echo $info['id']; ?>]" for="quantity" id="quantity" value="<?php echo $info['quantity']; ?>" max="<?php echo $info['capacity']?>" required>
                         </td>
@@ -43,6 +45,7 @@ $cartInfo = SelectCartInfo::selectCartInfo();
                         <td></td>
                         <td></td>
                         <td></td>
+                        <td></td>
                         <th class="text-light align-middle">Total :
                             <?php if($_POST) {
                                 calculateTotal();
@@ -50,12 +53,12 @@ $cartInfo = SelectCartInfo::selectCartInfo();
                                 echo "0";
                                 }
                             ?> €</th>
+                        
+                        <td></td>
                         <td>
                             <input type="submit" value="Actualiser" class="btn btn-primary">
-                        </td>
-                        <td>
                             <?php if(!empty($info) && $info['quantity'] > 0) { ?>
-                                <a href="AddToTicket.php" class="btn btn-primary">Valider</a> "
+                                <a href="myreservation.php?id=<?php if($info['quantity'] >= 1) { echo $info['user_id']; } ?>" class="btn btn-primary">Valider</a> "
                             <?php } else { ?> 
                                 <input type="submit" value="Valider" class="btn btn-primary" disabled>
                             <?php } ?>
