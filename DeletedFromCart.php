@@ -13,7 +13,7 @@ $sth->execute();
 $findById = $sth->fetch(PDO::FETCH_ASSOC);
 
 $id = $findById['id'];
-
+die(var_dump($findById));
 $sql =<<<SQL
         DELETE FROM cart
         WHERE id = $id
@@ -21,6 +21,9 @@ SQL;
 
 $delsth = $pdo->prepare($sql);
 $delsth->execute();
+
+
+
 
 header('location: cart.php');
 

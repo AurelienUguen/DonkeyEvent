@@ -29,6 +29,7 @@ $date = new Date();
                   <div class="col-md-2">
                     <img src="<?= $show->getPoster(); ?>" class="img-fluid" alt="Affiche du film <?= $show->getTitle(); ?>">
                   </div>
+                  <form action="AddToCart.php?id=<?= $show->getEventId(); ?>" method="post">
                   <div class="container container-fluid mastertextbox">
                     <div class="infotextbox">
                       <h2><?= $show->getTitle(); ?></h2>
@@ -58,7 +59,9 @@ $date = new Date();
                     <div class="container container-fluid linkinfobox">
                       <a href="eventDetails.php?id=<?= $show->getEventId(); ?>">Voir plus</a>
                       <a href="AddToCart.php?id=<?= $show->getEventId(); ?>">Réserver</a>
-                    </div>
+                      <input type="submit" value="Réserver">
+                    </div> 
+                    </form>
                   </div>      
                 </div>
               <?php   } ?>

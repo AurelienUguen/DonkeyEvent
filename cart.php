@@ -8,7 +8,7 @@ if($_POST) {
 
 $cartInfo = [];
 $cartInfo = SelectCartInfo::selectCartInfo();
-
+// die(var_dump($_POST));
 ?>
 
     <section>
