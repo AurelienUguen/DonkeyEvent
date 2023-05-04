@@ -23,8 +23,8 @@ $seance_id = $seance->getSeanceId();
 // var_dump($seance);
 
 $sql =<<<SQL
-        INSERT INTO cart (user_id, show_id, seance_id, quantity)
-        VALUES ($userId, $show_id, $seance_id, 1)
+        INSERT INTO cart (user_id, show_id, seance_id, quantity, showdate, showtime, left_capacity, full_capacity)
+        VALUES ($userId, $show_id, $seance_id, 1, '$showdate', '$showtime', null, '$capacity')
 SQL;
 
 $sth = $pdo->prepare($sql);
@@ -32,12 +32,16 @@ $sth->execute();
 
 
 $sql =<<<SQL
-        INSERT INTO capacity (seance_id, salle, showdate, showtime, left_capacity)
-        VALUES ('$seance_id', '$salle', '$showdate', '$showtime', null)
+        SELECT quantity FROM cart
+        WHERE seance_id = 'seance_id'
 SQL;
+$stm = $pdo->query($sql);
+$qty = $stm->fetch(PDO::FETCH_ASSOC);
+$leftCapacity = $capacity - $qty;
 
-$sth = $pdo->prepare($sql);
-$sth->execute();
+$sql =<<<SQL
+        UPDATE cart SET left_capacity = '$leftCapacity'
+SQL;
 
 header('location: cart.php');
 ?>

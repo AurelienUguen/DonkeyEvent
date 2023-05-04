@@ -8,7 +8,17 @@ if($_POST) {
 
 $cartInfo = [];
 $cartInfo = SelectCartInfo::selectCartInfo();
-// die(var_dump($_POST));
+die(var_dump($cartInfo));
+$cartId = $cartInfo[0]['id'];
+$showId = $cartInfo[0]['show_id'];
+
+// $showtime = $cartinfo;
+if($_POST) {
+    UpdateCartQuantity::updateLeftCapacityByShow($showId);
+    if($_POST['quantity'] > 1) {
+        UpdateCartQuantity::updateLeftCapacityByShowtime($cartId);
+    }
+}
 ?>
 
     <section>
@@ -19,6 +29,7 @@ $cartInfo = SelectCartInfo::selectCartInfo();
                     <tr>
                         <th scope="col"></th>
                         <th scope="col">Evènement</th>
+                        <th scope="col">Séance</th>
                         <th scope="col">Quantité</th>
                         <th scope="col">Prix</th>
                         <th scope="col">Catégorie</th>
@@ -31,6 +42,7 @@ $cartInfo = SelectCartInfo::selectCartInfo();
                     <tr>
                         <td class="align-middle"><img src="<?php echo $info['poster']; ?>" alt="Affiche du film <?php echo $info['event']?>" width="100px"></td>
                         <td class="text-light align-middle"><?php echo $info['event']; ?></td>
+                        <td class="text-light align-middle"><?php echo $info['showtime']; ?></td>
                         <td class="text-light align-middle">
                             <input type="number" name="quantity[<?php echo $info['id']; ?>]" for="quantity" id="quantity" value="<?php echo $info['quantity']; ?>" max="<?php echo $info['capacity']?>" required>
                         </td>

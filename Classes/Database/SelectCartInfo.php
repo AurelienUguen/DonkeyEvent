@@ -8,7 +8,7 @@ class SelectCartInfo {
         $pdo = PDOInstance::getInstance();
 
         $sql =<<<SQL
-                SELECT c.id, c.quantity as quantity, c.show_id, u.name as username, u.id as user_id, s.name as event, s.category as category, s.price as price, s.poster as poster, s2.capacity as capacity
+                SELECT c.id, c.quantity as quantity, c.show_id, c.showdate, c.showtime, u.name as username, u.id as user_id, s.name as event, s.category as category, s.price as price, s.poster as poster, s2.capacity as capacity
                 FROM cart c
                 INNER JOIN user u ON u.id = c.user_id
                 INNER JOIN seance s2 ON s2.id = c.seance_id
