@@ -7,7 +7,7 @@
                         <a class="nav-link link-warning" href="shows.php?cat=movie">Cinéma</a>
                         <a class="nav-link link-warning" href="shows.php?cat=show">Spectacle</a>
                         <a class="nav-link link-warning" href="myreservation.php">Mes réservations</a>
-                        <a class="nav-link link-warning" href="cart.php?id=<?= $_SESSION['id']; ?>">Panier</a>
+                        <a class="nav-link link-warning" href="cart.php?id=<?= $_SESSION['user_id']; ?>">Panier</a>
                         <a class="nav-link link-warning" href="inc/disconnexionUtils.php">Déconnexion</a>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ class SelectCartInfo {
 
     public static function selectCartInfo()
     {
-        $userId = $_SESSION['id'];
+        $userId = $_SESSION['user_id'];
         $pdo = PDOInstance::getInstance();
 
         $sql =<<<SQL

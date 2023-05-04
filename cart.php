@@ -51,11 +51,13 @@ $cartInfo = SelectCartInfo::selectCartInfo();
                                 }
                             ?> €</th>
                         <td>
-                            <input type="submit" value="Actualiser" class="btn btn-lg btn-primary">
+                            <input type="submit" value="Actualiser" class="btn btn-primary">
+                        </td>
+                        <td>
                             <?php if(!empty($info) && $info['quantity'] > 0) { ?>
-                                <a href="myreservation.php?id=<?php if($info['quantity'] >= 1) { echo $info['user_id']; } ?>" class="btn btn-lg btn-primary">Valider</a> "
+                                <a href="AddToTicket.php" class="btn btn-primary">Valider</a> "
                             <?php } else { ?> 
-                                <input type="submit" value="Valider" class="btn btn-lg btn-primary" disabled>
+                                <input type="submit" value="Valider" class="btn btn-primary" disabled>
                             <?php } ?>
                         </td>
                     </tr>

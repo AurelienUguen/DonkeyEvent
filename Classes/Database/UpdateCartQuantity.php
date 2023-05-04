@@ -4,7 +4,7 @@ class UpdateCartQuantity {
 
     public static function updateQuantity()
     {
-        $userId = $_SESSION['id'];
+        $userId = $_SESSION['user_id'];
         $pdo = PDOInstance::getInstance();
 
         foreach($_POST['quantity'] as $id => $quantity) {

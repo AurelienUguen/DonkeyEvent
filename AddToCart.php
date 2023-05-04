@@ -4,7 +4,7 @@ require_once 'autoload.php';
 
 $pdo = PDOInstance::getInstance();
 
-$userId = $_SESSION['id'];
+$userId = $_SESSION['user_id'];
 
 
 $showId = intval($_GET['id']);
