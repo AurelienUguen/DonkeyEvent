@@ -8,19 +8,7 @@ if($_POST) {
 
 $cartInfo = [];
 $cartInfo = SelectCartInfo::selectCartInfo();
-/* 
-if (!empty($_POST)) {
-    $cartId = $cartInfo[0]['id'];
-    $showId = $cartInfo[0]['show_id'];
 
-    // $showtime = $cartinfo;
-    if($_POST) {
-        UpdateCartQuantity::updateLeftCapacityByShow($showId);
-        if($_POST['quantity'] > 1) {
-            UpdateCartQuantity::updateLeftCapacityByShowtime($cartId);
-        }
-    }
-} */
 ?>
 
     <section>

@@ -6,6 +6,10 @@
                         <a class="nav-link link-warning" href="shows.php?cat=movie">Cinéma</a>
                         <a class="nav-link link-warning" href="shows.php?cat=show">Spectacle</a>
                         <a class="nav-link link-warning" href="connexionpage.php">Se connecter</a>
+                        <form style="width: 500px; padding: 0px;" action="search.php" method="get">
+                        <input type="search" name="search" class="input-group-text" style="width: 180px; height: 25px; margin-right: 8px;">
+                        <input type="submit" class="input-group-text" style="width: 80px; height: 25px;" value="Search">
+                        </form>
                     </div>
                 </div>
             </nav>

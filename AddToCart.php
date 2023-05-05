@@ -3,7 +3,7 @@
 require_once 'autoload.php';
 
 $pdo = PDOInstance::getInstance();
-// die(var_dump($_POST));
+
 $userId = $_SESSION['id'];
 
 if(!empty($_POST)){
@@ -20,9 +20,6 @@ if(!empty($_POST)){
     $show_id = $seance->getShowId();
     $seance_id = $seance->getSeanceId();
 
-    // var_dump($event);
-    // var_dump($seance);
-
     $sql =<<<SQL
             INSERT INTO cart (user_id, show_id, seance_id, quantity, showdate, showtime, left_capacity, full_capacity)
             VALUES ($userId, $show_id, $seance_id, 1, '$showdate', '$showtime', null, '$capacity')
@@ -31,7 +28,6 @@ if(!empty($_POST)){
     $sth = $pdo->prepare($sql);
     $sth->execute();
 } else {
-
     $showId = intval($_GET['id']);
     $event = getEventsById($showId);
     $seance = getSeanceById($showId);
@@ -49,9 +45,7 @@ if(!empty($_POST)){
 
     $sth = $pdo->prepare($sql);
     $sth->execute();
-
 }
-
 
 header('location: cart.php');
 ?>
